@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="theme-color" content="#FF69B4">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
   <title id="pageTitle"></title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@300;400;700&family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
   
@@ -14,7 +16,7 @@
     "gameTitle": "각 자리 숫자가 나타내는 값",
     "defaultScore": 10,
     "bannerURL": "https://github.com/hwimath2/imagrfile/blob/main/%EC%A1%B0%EC%9D%B4%20%EC%B4%88%EC%95%882.jpg?raw=true",
-    "randomizeQuestions": false,
+    "randomizeQuestions": true,
     "questions": [
       {
         "id": 1,
@@ -854,45 +856,253 @@
       position: relative;
       overflow: hidden;
     }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+      border-radius: 7px 7px 0 0;
+    }
+    .btn:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+      border-radius: 0 0 7px 7px;
+    }
+    .btn:hover {
+      background: var(--button-hover-bg);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,105,180,0.5);
+    }
+    .btn:active {
+      transform: var(--button-active-transform);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 1px 0 rgba(0,0,0,0.1),
+        0 2px 0 var(--keyboard-bottom),
+        0 0 5px rgba(0,0,0,0.2);
+      transition: all 0.05s ease;
+    }
+    .btn:disabled {
+      cursor: not-allowed;
+      transform: translateY(1px);      /* 음각 효과 */
+      filter: grayscale(40%) brightness(95%);  /* 모든 버튼에 동일한 회색조와 밝기 감소 적용 */
+      opacity: 0.7;                   /* 모든 버튼에 동일한 투명도 적용 */
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 1px 0 rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1);    /* 그림자 효과 감소 */
+      text-shadow: none;             /* 텍스트 그림자 제거 */
+      transition: all 0.2s ease;     /* 부드러운 전환 효과 */
+    }
+    .btn:disabled:hover {
+      transform: translateY(1px);    /* hover 효과 제거 */
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 1px 0 rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1);    /* hover 시에도 동일한 그림자 유지 */
+      filter: grayscale(40%) brightness(95%);  /* hover 시에도 동일한 효과 유지 */
+    }
+    #startButton {
+      font-size: 1.3em;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #FF69B4, #FF8DA1);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--content-font);
+      box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+    }
+    #startButton:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+      box-shadow: 0 6px 20px rgba(255,105,180,0.4);
+    }
+    #nextButton {
+      background-color: var(--next-button-color);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1),
+        0 4px 0 var(--next-button-dark),
+        0 6px 0 rgba(0,0,0,0.1),
+        0 8px 0 rgba(0,0,0,0.1),
+        0 0 10px rgba(0,0,0,0.2);
+    }
+    #nextButton:hover {
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 3px 0 rgba(0,0,0,0.1),
+        0 5px 0 var(--next-button-dark),
+        0 7px 0 rgba(0,0,0,0.1),
+        0 9px 0 rgba(0,0,0,0.1),
+        0 0 12px rgba(0,0,0,0.2);
+    }
+    #nextButton.complete-button {
+      background-color: var(--complete-button-color);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1),
+        0 4px 0 var(--complete-button-dark),
+        0 6px 0 rgba(0,0,0,0.1),
+        0 8px 0 rgba(0,0,0,0.1),
+        0 0 10px rgba(0,0,0,0.2);
+    }
+    #nextButton.complete-button:hover {
+      transform: var(--button-hover-transform);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 3px 0 rgba(0,0,0,0.1),
+        0 5px 0 var(--complete-button-dark),
+        0 7px 0 rgba(0,0,0,0.1),
+        0 9px 0 rgba(0,0,0,0.1),
+        0 0 12px rgba(137, 87, 161, 0.4);
+    }
+    #submitButton {
+      background-color: var(--submit-button-color);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1),
+        0 4px 0 var(--submit-button-dark),
+        0 6px 0 rgba(0,0,0,0.1),
+        0 8px 0 rgba(0,0,0,0.1),
+        0 0 10px rgba(0,0,0,0.2);
+    }
+    #submitButton:hover {
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 3px 0 rgba(0,0,0,0.1),
+        0 5px 0 var(--submit-button-dark),
+        0 7px 0 rgba(0,0,0,0.1),
+        0 9px 0 rgba(0,0,0,0.1),
+        0 0 12px rgba(0,0,0,0.2);
+    }
+    #checkButton {
+      background-color: var(--check-button-color);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 2px 0 rgba(0,0,0,0.1),
+        0 4px 0 var(--check-button-dark),
+        0 6px 0 rgba(0,0,0,0.1),
+        0 8px 0 rgba(0,0,0,0.1),
+        0 0 10px rgba(0,0,0,0.2);
+    }
+    #checkButton:hover {
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.1),
+        0 3px 0 rgba(0,0,0,0.1),
+        0 5px 0 var(--check-button-dark),
+        0 7px 0 rgba(0,0,0,0.1),
+        0 9px 0 rgba(0,0,0,0.1),
+        0 0 12px rgba(0,0,0,0.2);
+    }
 
     /* ======================= 객관식 옵션 스타일 ======================= */
     .option {
       border: none;
-      border-radius: var(--border-radius-medium);
+      border-radius: 25px;
       cursor: pointer;
       font-weight: 500;
-      transition: all 0.15s ease;
+      transition: all 0.3s ease;
       padding: var(--option-padding-v) var(--option-padding-h);
       font-size: var(--option-font-size);
       margin: var(--button-margin);
       position: relative;
       overflow: hidden;
-      background: radial-gradient(ellipse at 30% 30%, var(--option-color) 0%, var(--option-dark) 100%);
+      background: linear-gradient(to bottom, #FF69B4, #FF1493);
       color: white;
       text-align: center;
-      transform: perspective(500px) rotateX(var(--option-3d-angle));
       min-width: var(--option-min-width);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-family: var(--content-font);
+      box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px rgba(255,105,180,0.2),
+        inset 0 -4px 8px rgba(0,0,0,0.2),
+        inset 0 2px 4px rgba(255,255,255,0.5);
+      transform: translateY(0);
+      -webkit-tap-highlight-color: transparent !important;
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      outline: none;
+    }
+
+    .option:active {
+      transform: scale(0.98);
+      opacity: 0.8;
+      background: linear-gradient(to bottom, #FF1493, #FF69B4);
+    }
+
+    .btn, button, .option, .answer-input, .image-container {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .question-image, .image-container, .question-images {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+    }
+
+    .question-image:hover, 
+    .question-image:active, 
+    .question-image:focus {
+      transform: none;
+      box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+    }
+
+    @media (hover: none) {
+      .option:active,
+      .btn:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+      }
+      
+      .question-image:hover {
+        transform: none;
+        box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+      }
+    }
+
+    .option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      border-radius: 25px 25px 0 0;
     }
 
     .option:hover {
-      transform: perspective(500px) rotateX(calc(var(--option-3d-angle) + 5deg)) translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 4px 8px rgba(0,0,0,0.15),
+        0 8px 16px rgba(255,105,180,0.3),
+        inset 0 -4px 8px rgba(0,0,0,0.2),
+        inset 0 2px 4px rgba(255,255,255,0.5);
     }
 
     .option.selected {
-      background: radial-gradient(ellipse at 30% 30%, var(--option-selected-color) 0%, var(--option-selected-dark) 100%);
+      background: linear-gradient(to bottom, #FFA500, #FF8C00);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 4px 8px rgba(0,0,0,0.2),
+        0 8px 16px rgba(255,165,0,0.4),
+        inset 0 -4px 8px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.4);
     }
 
-    .option.correct {
-      background: radial-gradient(ellipse at 30% 30%, var(--correct-color) 0%, var(--correct-dark) 100%);
-    }
-
-    .option.incorrect {
-      background: radial-gradient(ellipse at 30% 30%, var(--incorrect-color) 0%, var(--incorrect-dark) 100%);
-    }
-
-    /* 정답/오답 피드백 스타일 */
+    /* 정답/오답 피드백 효과 */
     .option.correct {
       background: linear-gradient(to bottom, #2ecc71, #27ae60);
       animation: glowCorrect 2s infinite;
@@ -1490,13 +1700,10 @@
     .loading-spinner {
       display: none; /* Initially hidden */
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0 left: 0;
+      width: 100%; height: 100%;
       background-color: rgba(0,0,0,0.5);
       z-index: 9999;
-      display: flex;
       justify-content: center;
       align-items: center;
     }
@@ -1770,35 +1977,6 @@
       font-weight: bold;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    /* 모든 버튼의 기본 포커스 스타일 제거 */
-    button, .btn, .option {
-      -webkit-tap-highlight-color: transparent; /* 모바일/태블릿에서 탭 시 하이라이트 제거 */
-      outline: none; /* 포커스 아웃라인 제거 */
-    }
-
-    button:focus, .btn:focus, .option:focus {
-      outline: none;
-    }
-
-    /* 터치 디바이스에서 탭 시 파란색 배경 제거 */
-    * {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* 버튼 포커스 스타일 제거 */
-    button, .btn, .option {
-      -webkit-tap-highlight-color: transparent !important;
-      outline: none !important;
-    }
-
-    button:focus, .btn:focus, .option:focus {
-      outline: none !important;
-    }
-
-    * {
-      -webkit-tap-highlight-color: transparent !important;
     }
   </style>
 </head>
