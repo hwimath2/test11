@@ -1,0 +1,2913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#FF69B4">
+  <title id="pageTitle"></title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@300;400;700&family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- ======================= 게임 설정 및 문제 데이터 (최상단 배치) ======================= -->
+  <script>
+  /* 게임 설정 및 문제 데이터 */
+  const gameConfig = {
+    "gameTitle": "각 자리 숫자가 나타내는 값",
+    "defaultScore": 10,
+    "bannerURL": "https://github.com/hwimath2/imagrfile/blob/main/%EC%A1%B0%EC%9D%B4%20%EC%B4%88%EC%95%882.jpg?raw=true",
+    "randomizeQuestions": false,
+    "questions": [
+      {
+        "id": 1,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/1.png?raw=true"],
+        "passage": "",
+        "answer": "3",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 2,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/2.png?raw=true"],
+        "passage": "",
+        "answer": "4",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 3,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/3.png?raw=true"],
+        "passage": "",
+        "answer": "748",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["알맞은 수"],
+        "customOptions": ""
+      },
+      {
+        "id": 4,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/4.png?raw=true"],
+        "passage": "",
+        "answer": "395",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["알맞은 수"],
+        "customOptions": ""
+      },
+      {
+        "id": 5,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/5.png?raw=true"],
+        "passage": "",
+        "answer": "608",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["알맞은 수"],
+        "customOptions": ""
+      },
+      {
+        "id": 6,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/6.png?raw=true"],
+        "passage": "",
+        "answer": "605",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["숫자로 쓰시오"],
+        "customOptions": ""
+      },
+      {
+        "id": 7,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/7.png?raw=true"],
+        "passage": "",
+        "answer": "503",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["숫자로 쓰시오"],
+        "customOptions": ""
+      },
+      {
+        "id": 8,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/8.png?raw=true"],
+        "passage": "",
+        "answer": "5",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 9,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/9.png?raw=true"],
+        "passage": "",
+        "answer": "569",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["숫자로 쓰시오"],
+        "customOptions": ""
+      },
+      {
+        "id": 10,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/10.png?raw=true"],
+        "passage": "",
+        "answer": "5",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 11,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/11.png?raw=true"],
+        "passage": "",
+        "answer": "352",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["밤의 개수(개)"],
+        "customOptions": ""
+      },
+      {
+        "id": 12,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/12.png?raw=true"],
+        "passage": "",
+        "answer": "607",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["알맞은 수"],
+        "customOptions": ""
+      },
+      {
+        "id": 13,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/13.png?raw=true"],
+        "passage": "",
+        "answer": "493",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["수"],
+        "customOptions": ""
+      },
+      {
+        "id": 14,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/14.png?raw=true"],
+        "passage": "",
+        "answer": "5",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["알맞은 수"],
+        "customOptions": ""
+      },
+      {
+        "id": 15,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/15.png?raw=true"],
+        "passage": "",
+        "answer": "302",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["얼마"],
+        "customOptions": ""
+      },
+      {
+        "id": 16,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/16.png?raw=true"],
+        "passage": "",
+        "answer": "2",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 17,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/17.png?raw=true"],
+        "passage": "",
+        "answer": "760",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["수"],
+        "customOptions": ""
+      },
+      {
+        "id": 18,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/18.png?raw=true"],
+        "passage": "",
+        "answer": "872",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["수"],
+        "customOptions": ""
+      },
+      {
+        "id": 19,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/19.png?raw=true"],
+        "passage": "",
+        "answer": "2",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 20,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/20.png?raw=true"],
+        "passage": "",
+        "answer": "582",
+        "type": "주관식",
+        "score": 10,
+        "placeholders": ["수"],
+        "customOptions": ""
+      },
+      {
+        "id": 21,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/21.png?raw=true"],
+        "passage": "",
+        "answer": "5",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 22,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/22.png?raw=true"],
+        "passage": "",
+        "answer": "1",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 23,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/23.png?raw=true"],
+        "passage": "",
+        "answer": "3",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 24,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/24.png?raw=true"],
+        "passage": "",
+        "answer": "4",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      },
+      {
+        "id": 25,
+        "images": ["https://raw.githubusercontent.com/hwimath2/joy1/main/25.png?raw=true"],
+        "passage": "",
+        "answer": "2",
+        "type": "객관식",
+        "score": 10,
+        "placeholders": "",
+        "customOptions": ""
+      }
+    ]
+  };
+</script>
+  <style>
+    /* ======================= 디자인 변수 설정 (카테고리별 정리) ======================= */
+    :root {
+      /* ----- 게임 전체 배경 ----- */
+      --body-bg-start-color: #FFECF5;      /* 배경 그라데이션 시작 색상 (연한 핑크) */
+      --body-bg-end-color: #FFD1DC;        /* 배경 그라데이션 끝 색상 (연한 핑크) */
+      --body-pattern-opacity: 0.4;          /* 배경 패턴 투명도 */
+
+      /* ----- 기본 색상 설정 ----- */
+      --primary-pink: #FF69B4;             /* 메인 컬러 - 핫핑크 */
+      --primary-pink-light: #FFB6C1;       /* 라이트 핑크 */
+      --primary-pink-dark: #C71585;        /* 진한 핑크 */
+      --accent-color: #FF1493;             /* 액센트 컬러 */
+
+      /* ----- 폰트 설정 ----- */
+      --main-font: 'Noto Sans KR', 'Gaegu', cursive;  /* 기본 폰트를 귀여운 스타일로 변경 */
+      --base-font-size: 16px;
+      --small-font-size: 0.9rem;
+      --medium-font-size: 1.2rem;
+      --large-font-size: 1.3rem;
+      --x-large-font-size: 2rem;
+
+      /* ----- 제목 스타일 ----- */
+      --game-title-color: var(--primary-pink);  /* 제목 색상을 핑크로 변경 */
+      --game-title-font-size: 36px;
+      --game-title-bg-start: rgba(255,255,255,0.95);
+      --game-title-bg-end: rgba(255,192,203,0.15);
+      --game-title-border: 2px solid var(--primary-pink-light);
+      --game-title-border-radius: 20px;
+      --game-title-shadow: 0 4px 15px rgba(255,105,180,0.3);
+
+      /* ----- 문제 컨테이너 스타일 ----- */
+      --question-container-bg: rgba(255,255,255,0.95);
+      --question-container-border: 2px solid var(--primary-pink-light);
+      --question-container-radius: 25px;
+      --question-container-shadow: 0 8px 25px rgba(255,105,180,0.2);
+
+      /* ----- 이미지 스타일 ----- */
+      --image-border-radius: 0px;
+      --image-shadow: none;
+      --image-hover-transform: none;
+      --image-transition: none;
+
+      /* ----- 버튼 스타일 ----- */
+      --button-bg: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-pink-dark) 100%);
+      --button-hover-bg: linear-gradient(135deg, var(--primary-pink-dark) 0%, var(--primary-pink) 100%);
+      --button-shadow: 0 4px 15px rgba(255,105,180,0.4);
+      --button-border-radius: 25px;
+      --button-padding: 12px 30px;
+      --button-font-size: 18px;
+
+      /* ----- 입력 필드 스타일 ----- */
+      --input-bg: rgba(255,255,255,0.9);
+      --input-border: 2px solid var(--primary-pink-light);
+      --input-radius: 15px;
+      --input-shadow: 0 4px 10px rgba(255,105,180,0.2);
+      --input-focus-shadow: 0 6px 15px rgba(255,105,180,0.3);
+
+      /* ----- 기본 색상 설정 ----- */
+      --secondary-color: #2c3e50;  /* 제목, 문제 번호 등 주요 텍스트 색상 */
+      --light-gray: #f8f9fa;       /* 문제 컨테이너, 정보 패널의 배경색 */
+      --light-gray-2: #ecf0f1;     /* 문제 번호 배경색, 결과 화면 번호 배경색 */
+
+      /* ----- 정답/오답 피드백 색상 설정 ----- */
+      --correct-color: #2ecc71;      /* 정답 표시 색상(초록색) */
+      --correct-dark: #27ae60;       /* 정답 색상의 어두운 버전(그라데이션용) */
+      --incorrect-color: #e74c3c;    /* 오답 표시 색상(빨간색) */
+      --incorrect-dark: #c0392b;     /* 오답 색상의 어두운 버전(그라데이션용) */
+      --feedback-delay: 1000;         /* 정답/오답 피드백 표시 지연 시간(ms) */
+
+      /* ----- 버튼 공통 설정 ----- */
+      --button-font-size: 16px;       /* 버튼 글자 크기 */
+      --button-padding: 14px 24px;  /* 버튼 내부 여백 */
+      --button-margin: 10px 5px;    /* 버튼 마진 */
+      --button-transform: translateY(-4px);     /* 버튼 기본 높이 조정 */
+      --button-hover-transform: translateY(-5px); /* 버튼 호버 시 높이 조정 */
+      --button-active-transform: translateY(0px); /* 버튼 클릭 시 높이 조정 */
+      --disabled-color: #bdc3c7;     /* 비활성화된 버튼 색상 */
+
+      /* ----- 시작 버튼 색상 ----- */
+      --start-button-color: #2ecc71; /* 시작 버튼 배경색(초록색) */
+      --start-button-dark: #27ae60;  /* 시작 버튼 어두운 버전 */
+
+      /* ----- 다음 버튼 색상 ----- */
+      --next-button-color: #322D55; /* 다음 버튼 배경색 */
+      --next-button-dark: #262142;  /* 다음 버튼 어두운 버전 */
+
+      /* ----- 완료 버튼 색상 ----- */
+      --complete-button-color: #8957a1; /* 완료 버튼 배경색 */
+      --complete-button-dark: #7a4391;  /* 완료 버튼 어두운 색상 */
+
+      /* ----- 확인 버튼 색상 ----- */
+      --check-button-color: #3498db; /* 확인 버튼 배경색 */
+      --check-button-dark: #2980b9;  /* 확인 버튼 어두운 버전 */
+
+      /* ----- 제출 버튼 색상 ----- */
+      --submit-button-color: #f39c12; /* 제출 버튼 배경색 */
+      --submit-button-dark: #d35400;  /* 제출 버튼 어두운 버전 */
+
+      /* ----- 객관식 옵션 색상 ----- */
+      --option-color: #3498db;           /* 객관식 옵션 버튼 기본 색상 */
+      --option-dark: #2980b9;           /* 객관식 옵션 버튼 어두운 버전 */
+      --option-selected-color: #f39c12; /* 선택된 객관식 버튼 색상 */
+      --option-selected-dark: #d35400; /* 선택된 객관식 버튼 어두운 버전 */
+
+      /* ----- 키보드 스타일 버튼 관련 색상 ----- */
+      --keyboard-top: #f5f5f5;       /* 키보드 스타일 버튼 상단 색상 */
+      --keyboard-side: #ddd;         /* 키보드 스타일 버튼 측면 색상 */
+      --keyboard-bottom: #bbb;       /* 키보드 스타일 버튼 하단 색상 */
+
+      /* ----- 객관식 옵션 설정 ----- */
+      --option-min-width: 70px;   /* <<-- 객관식 버튼 최소 너비 조정 위치 */
+      --option-padding-h: 10px;      /* 버튼 좌우 여백 */
+      --option-padding-v: 15px;      /* 버튼 상하 여백 */
+      --option-font-size: 25px;      /* 버튼 글자 크기 */
+      --option-3d-angle: 10deg;
+      --option-selected-scale: 1.1;
+      --option-hover-scale: 1.05;
+
+      /* ----- 주관식 피드백 효과 설정 ----- */
+      --correct-bg-color: rgba(46,204,113,0.2);     /* 정답 배경색 (20% 투명도) */
+      --correct-glow-color: rgba(46,204,113,0.5);   /* 정답 테두리 빛남 효과 (50% 투명도) */
+      --incorrect-bg-color: rgba(231,76,60,0.2);   /* 오답 배경색 (20% 투명도) */
+      --incorrect-glow-color: rgba(231,76,60,0.5);  /* 오답 테두리 빛남 효과 (50% 투명도) */
+      --answer-glow-intensity: 15px;            /* 테두리 빛남 효과 강도 */
+
+      /* ----- 게임 플레이 요소 ----- */
+      --progress-height: 20px;                /* 진행률 게이지 높이 */
+      --progress-border-radius: 10px;         /* 진행률 게이지 테두리 둥글기 */
+      --progress-bg-color: #f0f0f0;          /* 진행률 게이지 배경색 */
+      --progress-gradient: linear-gradient(90deg, #3498db, #9b59b6); /* 진행률 게이지 그라데이션 */
+      --progress-shine: rgba(255,255,255,0.3);  /* 진행률 게이지 빛남 효과 색상 */
+      --progress-animation-duration: 0.8s;    /* 진행률 게이지 애니메이션 지속 시간 */
+      --progress-shine-duration: 2s;          /* 진행률 게이지 빛남 효과 지속 시간 */
+      --chance-width: 40px;               /* 기회 표시기 너비 */
+      --chance-height: 16px;              /* 기회 표시기 높이 */
+      --chance-border-radius: 4px;        /* 기회 표시기 테두리 둥글기 */
+      --chance-animation-duration: 3s; /* 기회 표시기 애니메이션 지속 시간 */
+      --chance-wave-duration: 2s;         /* 기회 표시기 물결 애니메이션 지속 시간 */
+      --chance-color: #2ecc71;            /* 남은 기회 표시 색상 */
+      --chance-lost-color: #ecf0f1;       /* 잃은 기회 표시 색상 */
+
+      /* ----- 진행 게이지 설정 ----- */
+      --progress-height: 15px;            /* 진행 게이지 높이 */
+      --progress-border-radius: 8px;      /* 진행 게이지 테두리 둥글기 */
+      --progress-left-color: #00D2F7;      /* 진행 게이지 왼쪽 색상 */
+      --progress-right-color: #7DF9AA;     /* 진행 게이지 오른쪽 색상 */
+      --progress-bg-color: rgba(236,240,241,0.8); /* 진행 게이지 배경색 */
+      --progress-shine: rgba(255,255,255,0.35); /* 진행 게이지 반짝임 효과 색상 */
+      --progress-animation-duration: 0.7s; /* 진행 게이지 애니메이션 지속 시간 */
+      --progress-shine-duration: 2s; /* 진행 게이지 반짝임 애니메이션 지속 시간 */
+      --progress-gradient: linear-gradient(90deg, var(--progress-left-color) 0%, var(--progress-right-color) 100%); /* 진행 게이지 그라데이션 */
+
+      /* ----- 완료 애니메이션 설정 ----- */
+      --complete-animation-duration: 1.5s; /* 완료 애니메이션 지속 시간 */
+      --particle-count: 50;               /* 완료 애니메이션 파티클 개수 */
+      --particle-size-min: 5px;           /* 파티클 최소 크기 */
+      --particle-size-max: 15px;          /* 파티클 최대 크기 */
+      --particle-animation-duration: 1s; /* 파티클 애니메이션 지속 시간 */
+      --particle-distance-min: 50px; /* 파티클 최소 이동 거리 */
+      --particle-distance-max: 230px; /* 파티클 최대 이동 거리 */
+
+      /* ----- 결과 화면 색상 ----- */
+      --result-info-bg: rgba(255,255,255,0.7);  /* 결과 정보 배경색 */
+      --result-score-bg: linear-gradient(120deg, #AB4679 0%, #FF1493 50%, #FFCC70 100%); /* 결과 점수 배경 */
+      --score-highlight-color: #FFCC70; /* 최종 점수 하이라이트 색상 */
+      --result-animation-duration: 0.5s; /* 결과 화면 애니메이션 지속 시간 */
+      --score-pulsate-duration: 2s; /* 점수 표시 펄스 애니메이션 지속 시간 */
+      --score-shine-duration: 3s;     /* 점수 표시 반짝임 애니메이션 지속 시간 */
+
+      /* ----- 파티클 효과 색상 ----- */
+      --particle-color-1: #00D2F7;  /* 파티클 효과 색상 1 */
+      --particle-color-2: #322D55;  /* 파티클 효과 색상 2 */
+      --particle-color-3: #FFCC70;  /* 파티클 효과 색상 3 */
+      --particle-color-4: #4CAF50;  /* 파티클 효과 색상 4 */
+      --particle-color-5: #9b59b6;  /* 파티클 효과 색상 5 */
+
+      /* ----- 크기 및 간격 설정 ----- */
+      --container-max-width: 1100px; /* 컨테이너 최대 너비 */
+      --container-width: 95%;       /* 컨테이너 기본 너비(비율) */
+      --container-padding: 30px;    /* 컨테이너 내부 여백 */
+      --item-margin: 15px;          /* 아이템 기본 마진 */
+      --small-gap: 10px;            /* 작은 간격 */
+      --large-gap: 25px;            /* 큰 간격 */
+      --question-min-height: 500px; /* 문제 컨테이너 최소 높이 */
+
+      /* ----- 테두리 및 그림자 ----- */
+      --border-radius-small: 5px;     /* 작은 테두리 둥글기 */
+      --border-radius-medium: 8px;    /* 중간 테두리 둥글기(버튼용) */
+      --border-radius-large: 10px;    /* 큰 테두리 둥글기(컨테이너용) */
+      --border-radius-x-large: 12px; /* 매우 큰 테두리 둥글기 */
+      --border-radius-circle: 50%;    /* 원형 테두리(객관식 버튼용) */
+      --box-shadow-light: 0 2px 5px rgba(0,0,0,0.1); /* 가벼운 그림자 */
+      --box-shadow-medium: 0 4px 10px rgba(0,0,0,0.1); /* 중간 그림자 */
+      --box-shadow-heavy: 0 8px 20px rgba(0,0,0,0.15); /* 진한 그림자 */
+
+      /* ----- 입력 필드 설정 ----- */
+      --input-padding: 15px 20px;     /* 입력 필드 내부 여백 */
+      --input-font-size: 32px;        /* 입력 필드 글자 크기 (16px에서 32px로 증가) */
+      --input-focus-shadow: 0 5px 15px rgba(52,152,219,0.2); /* 입력 필드 포커스 그림자 */
+      --input-focus-transform: translateY(-2px); /* 입력 필드 포커스 시 위치 이동 */
+
+      /* ----- 반응형 디자인 설정 ----- */
+      --mobile-breakpoint: 480px;     /* 모바일 기기 분기점 */
+
+      /* ----- 태블릿 최적화를 위한 변수 ----- */
+      --tablet-option-font-size: 20px;     /* 태블릿용 옵션 폰트 크기 */
+      --tablet-padding: 25px;              /* 태블릿용 여백 */
+      --tablet-touch-target: 44px;         /* 태블릿 터치 영역 크기 */
+
+      --primary-color: #FF69B4;
+      --secondary-color: #FFB6C1;
+      --accent-color: #FFC0CB;
+      --background-gradient: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+      --title-font: 'Gaegu', cursive;
+      --content-font: 'Dongle', sans-serif;
+      --text-font: 'Noto Sans KR', sans-serif;
+      --shadow: 0 4px 6px rgba(255, 105, 180, 0.1);
+      --border-radius: 15px;
+    }
+
+    /* ======================= 공통 배경 및 레이아웃 ======================= */
+    body {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 20px;
+      font-family: var(--content-font);
+      font-size: 20px;
+      background: var(--background-gradient);
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 전체 배경에 반짝이는 효과 적용 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2393c5fd' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: var(--body-pattern-opacity);
+      z-index: -2;
+    }
+
+    /* ======================= 배너 & 제목 ======================= */
+    .banner {
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      text-align: center;
+      display: block;
+      box-shadow: 0 4px 20px rgba(255,105,180,0.15);
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(to right, transparent, rgba(255,105,180,0.3), transparent);
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid rgba(255,192,203,0.3);
+      filter: drop-shadow(0 2px 4px rgba(255,105,180,0.1));
+    }
+
+    /* 배너 호버 효과 */
+    .banner:hover img {
+      filter: drop-shadow(0 3px 6px rgba(255,105,180,0.15));
+      transition: filter 0.3s ease;
+    }
+
+    /* 배너와 컨텐츠 사이 자연스러운 그라데이션 효과 */
+    .banner::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 10px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+      pointer-events: none;
+    }
+
+    #gameTitle {
+      font-family: var(--title-font);
+      font-size: 2.5em;
+      color: white;
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 15px 30px;
+      background: #FF69B4;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #gameTitle::before {
+      content: '';
+      position: absolute;
+      top: -180%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.1) 60%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        top: -180%;
+        left: -50%;
+      }
+      100% {
+        top: 150%;
+        left: 100%;
+      }
+    }
+
+    #gameTitle::after {
+      display: none;
+    }
+
+    /* ======================= 컨테이너 & 정보 패널 ======================= */
+    .container {
+      max-width: var(--container-max-width);
+      width: var(--container-width);
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius-x-large);
+      box-shadow: 
+        0 8px 32px rgba(255,105,180,0.15),
+        inset 0 0 0 1px rgba(255,255,255,0.5);
+      padding: var(--container-padding);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border: 1px solid rgba(255,192,203,0.3);
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.8) 0%,
+        rgba(255,240,245,0.5) 100%
+      );
+      z-index: -1;
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(
+        90deg,
+        rgba(255,105,180,0.3),
+        rgba(255,192,203,0.6),
+        rgba(255,105,180,0.3)
+      );
+      border-radius: var(--border-radius-x-large) var(--border-radius-x-large) 0 0;
+    }
+
+    .container:hover {
+      box-shadow: var(--box-shadow-heavy);
+    }
+
+    /* 정보 패널 */
+    .info-panel {
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+      padding: 15px;
+      border-radius: var(--border-radius-large);
+      margin-bottom: 25px;
+      box-shadow: var(--box-shadow-light);
+    }
+
+    .info-item {
+      text-align: center;
+      padding: 5px 20px; /* 상하 패딩 줄임 */
+      flex: 1;
+      margin: 0 10px;
+      background-color: var(--secondary-color);
+      border-radius: var(--border-radius-large);
+      box-shadow: var(--box-shadow-light);
+    }
+
+    .info-label {
+      font-weight: 500;
+      margin-bottom: 2px; /* 라벨과 값 사이 간격 줄임 */
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 1; /* 줄 간격 최소화 */
+    }
+
+    .info-value {
+      font-size: 32px;
+      color: white;
+      font-weight: bold;
+      line-height: 1; /* 줄 간격 최소화 */
+    }
+
+    /* 기회 표시 스타일 */
+    .chances-container {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    .chance-indicator {
+      width: var(--chance-width);
+      height: var(--chance-height);
+      background-color: var(--chance-color);
+      border-radius: var(--chance-border-radius);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chance-indicator::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: chance-shine var(--chance-animation-duration) infinite;
+    }
+
+    .chance-indicator::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,
+          rgba(255,255,255,0.2) 0%,
+          rgba(255,255,255,0) 40%,
+          rgba(255,255,255,0) 60%,
+          rgba(255,255,255,0.2) 100%);
+      opacity: 0.5;
+      animation: chance-wave var(--chance-wave-duration) infinite alternate;
+    }
+
+    @keyframes chance-shine {
+      0% { left: -100%; }
+      20%, 100% { left: 100%; }
+    }
+
+    @keyframes chance-wave {
+      0% { opacity: 0.3; transform: translateY(-2px); }
+      100% { opacity: 0.7; transform: translateY(2px); }
+    }
+
+    .chance-indicator.lost {
+      background-color: var(--chance-lost-color);
+    }
+
+    .chance-indicator.lost::before,
+    .chance-indicator.lost::after {
+      display: none;
+    }
+
+    /* ======================= 시작 화면 ======================= */
+    #startSection {
+      text-align: center;
+      padding: 40px 0;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: var(--border-radius-x-large);
+      box-shadow: var(--box-shadow-medium);
+      max-width: 600px;
+      margin: 40px auto;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .start-title {
+      font-size: 2.2em;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      color: var(--primary-color);
+      font-family: var(--title-font);
+      text-shadow: 2px 2px 4px rgba(255,105,180,0.2);
+    }
+
+    .start-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    }
+
+    .input-field {
+      padding: var(--input-padding);
+      font-size: var(--input-font-size);
+      border: none;
+      border-radius: 10px;
+      width: 300px;
+      margin-right: 10px;
+      outline: none;
+      transition: all 0.3s;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1),
+                  inset 0 2px 5px rgba(0,0,0,0.05);
+      background-color: white;
+      color: var(--secondary-color);
+    }
+    .input-field:focus {
+      box-shadow: var(--input-focus-shadow),
+                  inset 0 2px 5px rgba(0,0,0,0.05);
+      transform: var(--input-focus-transform);
+    }
+    .input-field::placeholder {
+      color: #bdc3c7;
+      transition: all 0.3s;
+    }
+    .input-field:focus::placeholder {
+      opacity: 0.7;
+      transform: translateX(5px);
+    }
+
+    /* ======================= 키보드 스타일 버튼 ======================= */
+    .btn {
+      background: var(--button-bg);
+      border-radius: var(--button-border-radius);
+      padding: var(--button-padding);
+      font-size: var(--button-font-size);
+      font-family: 'Gaegu', cursive;
+      color: white;
+      border: none;
+      box-shadow: var(--button-shadow);
+      transition: all 0.3s ease;
+      margin: var(--button-margin);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ======================= 객관식 옵션 스타일 ======================= */
+    .option {
+      border: none;
+      border-radius: var(--border-radius-medium);
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      padding: var(--option-padding-v) var(--option-padding-h);
+      font-size: var(--option-font-size);
+      margin: var(--button-margin);
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 30% 30%, var(--option-color) 0%, var(--option-dark) 100%);
+      color: white;
+      text-align: center;
+      transform: perspective(500px) rotateX(var(--option-3d-angle));
+      min-width: var(--option-min-width);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .option:hover {
+      transform: perspective(500px) rotateX(calc(var(--option-3d-angle) + 5deg)) translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .option.selected {
+      background: radial-gradient(ellipse at 30% 30%, var(--option-selected-color) 0%, var(--option-selected-dark) 100%);
+    }
+
+    .option.correct {
+      background: radial-gradient(ellipse at 30% 30%, var(--correct-color) 0%, var(--correct-dark) 100%);
+    }
+
+    .option.incorrect {
+      background: radial-gradient(ellipse at 30% 30%, var(--incorrect-color) 0%, var(--incorrect-dark) 100%);
+    }
+
+    /* 정답/오답 피드백 스타일 */
+    .option.correct {
+      background: linear-gradient(to bottom, #2ecc71, #27ae60);
+      animation: glowCorrect 2s infinite;
+    }
+
+    .option.incorrect {
+      background: linear-gradient(to bottom, #e74c3c, #c0392b);
+      animation: glowIncorrect 2s infinite;
+    }
+
+    @keyframes glowCorrect {
+      0%, 100% {
+        box-shadow: 
+          0 4px 8px rgba(0,0,0,0.2),
+          0 0 15px rgba(46,204,113,0.5),
+          0 0 30px rgba(46,204,113,0.3),
+          inset 0 -4px 8px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.4);
+      }
+      50% {
+        box-shadow: 
+          0 4px 8px rgba(0,0,0,0.2),
+          0 0 20px rgba(46,204,113,0.7),
+          0 0 40px rgba(46,204,113,0.5),
+          inset 0 -4px 8px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.4);
+      }
+    }
+
+    @keyframes glowIncorrect {
+      0%, 100% {
+        box-shadow: 
+          0 4px 8px rgba(0,0,0,0.2),
+          0 0 15px rgba(231,76,60,0.5),
+          0 0 30px rgba(231,76,60,0.3),
+          inset 0 -4px 8px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.4);
+      }
+      50% {
+        box-shadow: 
+          0 4px 8px rgba(0,0,0,0.2),
+          0 0 20px rgba(231,76,60,0.7),
+          0 0 40px rgba(231,76,60,0.5),
+          inset 0 -4px 8px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.4);
+      }
+    }
+
+    /* KaTeX 렌더링된 수식 스타일 */
+    .option .katex {
+      font-size: var(--option-font-size);
+      font-family: var(--content-font);
+    }
+
+    /* 주관식 입력 필드 스타일 */
+    .answer-input {
+      padding: 5px 20px;
+      font-size: 32px;
+      line-height: 1;
+      border: 2px solid rgba(255,105,180,0.3);
+      border-radius: 15px;
+      width: 100%;
+      outline: none;
+      transition: all 0.3s;
+      box-shadow: 0 3px 10px rgba(255,105,180,0.1);
+      background-color: white;
+      color: #FF1493 !important;  /* 우선순위를 높여 확실하게 적용 */
+      font-family: var(--content-font);
+      height: 50px;
+    }
+
+    /* 입력 중일 때도 같은 색상 유지 */
+    .answer-input:focus {
+      color: #FF1493 !important;
+      box-shadow: var(--input-focus-shadow);
+      transform: var(--input-focus-transform);
+    }
+
+    /* 입력 완료 후에도 같은 색상 유지 (disabled 상태) */
+    .answer-input[readonly] {
+      color: #FF1493 !important;
+      opacity: 1;
+    }
+
+    .answer-input::placeholder {
+      color: #555;
+      font-family: var(--content-font);
+      font-size: 32px;
+      line-height: 1;    /* placeholder의 line-height도 1로 설정 */
+      transition: all 0.3s;
+      opacity: 0.8;
+    }
+
+    .answer-input:focus::placeholder {
+      opacity: 0.6;
+      transform: translateX(5px);
+    }
+
+    /* 정답/오답 스타일 */
+    .option.correct {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+    }
+
+    .option.incorrect {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    /* 선택된 상태에서 호버 효과 */
+    .option.selected:hover {
+      background: linear-gradient(135deg, #FFB700, #FFA500);
+      box-shadow: 0 6px 20px rgba(255,165,0,0.5);
+    }
+
+    /* ======================= 문제 영역 ======================= */
+    #gameSection {
+      display: none;
+      width: 100%;
+    }
+    .question-container {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 
+        0 8px 32px rgba(255,105,180,0.15),
+        inset 0 0 0 1px rgba(255,192,203,0.3);
+      padding: 25px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .question-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,240,245,0.8) 100%
+      );
+      z-index: -1;
+    }
+
+    /* JOY 텍스트 장식 스타일 */
+    .joy-decoration {
+      position: absolute;
+      font-family: 'Gaegu', cursive;
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(255,105,180,0.25);
+      z-index: 0;
+      pointer-events: none;
+      animation: floating 3s ease-in-out infinite;
+      white-space: nowrap;
+      text-shadow: 1px 1px 2px rgba(255,105,180,0.1);
+    }
+
+    .joy-decoration:nth-child(1) {
+      top: 15px;
+      right: 25px;
+      animation-delay: 0s;
+      transform: rotate(15deg);
+    }
+
+    .joy-decoration:nth-child(2) {
+      bottom: 20px;
+      left: 30px;
+      animation-delay: 1s;
+      transform: rotate(-15deg);
+    }
+
+    .joy-decoration:nth-child(3) {
+      top: 50%;
+      right: 35px;
+      animation-delay: 1.5s;
+      transform: rotate(10deg);
+    }
+
+    .joy-decoration:nth-child(4) {
+      top: 30%;
+      left: 25px;
+      animation-delay: 0.5s;
+      transform: rotate(-8deg);
+    }
+
+    .joy-decoration:nth-child(5) {
+      bottom: 35%;
+      right: 40px;
+      animation-delay: 2s;
+      transform: rotate(12deg);
+    }
+
+    .joy-decoration:nth-child(6) {
+      top: 70%;
+      left: 35px;
+      animation-delay: 2.5s;
+      transform: rotate(-5deg);
+    }
+
+    @keyframes floating {
+      0%, 100% {
+        transform: translateY(0) rotate(var(--rotation));
+        opacity: 0.25;
+      }
+      50% {
+        transform: translateY(-10px) rotate(var(--rotation));
+        opacity: 0.35;
+      }
+    }
+
+    /* 문제 컨텐츠는 항상 위에 표시되도록 */
+    .passage, .question {
+      position: relative;
+      z-index: 1;
+    }
+
+    .question-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 12px 36px rgba(255,105,180,0.2),
+        inset 0 0 0 1px rgba(255,192,203,0.4);
+    }
+
+    .question-images {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      max-width: 800px;
+      background: white;
+    }
+
+    .image-container {
+      width: 100%;
+      line-height: 0;
+      font-size: 0;
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+      border: 2px solid rgba(255,192,203,0.5);
+    }
+
+    .question-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      background: white;
+    }
+
+    /* 이미지 사이 간격과 테두리 완전 제거 */
+    .question-image + .question-image {
+      margin: 0;
+      border-top: 0;
+    }
+
+    /* 이미지 컨테이너 내부의 모든 요소에 대한 테두리 제거 */
+    .image-container * {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .question {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .question.with-passage {
+      margin-left: 10px;
+    }
+    .question-number {
+      font-size: 32px; /* 문제 번호 크기 증가 */
+      line-height: 1; /* 줄 간격 최소화 */
+      padding: 5px 15px; /* 상하 패딩 줄임 */
+      background-color: var(--light-gray-2);
+      border-radius: var(--border-radius-medium);
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
+    /* 주관식 입력 영역 */
+    .input-answer {
+      display: none; /* Initially hidden */
+      flex-direction: column;
+      align-items: center;
+      margin: 30px 0;
+      width: 100%;
+    }
+    .input-answer-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      /* max-width: 400px; /* This might be overridden by inline styles for width */
+      margin-bottom: 15px;
+      align-items: center; /* 입력 필드들을 중앙 정렬 */
+    }
+    .answer-input {
+      padding: var(--input-padding);
+      font-size: 32px; /* 1.2em에서 32px로 변경 */
+      border: 2px solid rgba(255,105,180,0.3);
+      border-radius: 15px;
+      width: 100%; /* Ensure full width within its 350px parent container */
+      outline: none;
+      transition: all 0.3s;
+      box-shadow: 0 3px 10px rgba(255,105,180,0.1);
+      background-color: white;
+      color: #333;
+      font-family: var(--content-font);
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+    .answer-input:focus {
+      box-shadow: var(--input-focus-shadow),
+                  inset 0 2px 5px rgba(0,0,0,0.05);
+      transform: var(--input-focus-transform);
+    }
+
+    /* 주관식 정답/오답 피드백 스타일 - 통일된 방식 */
+    .answer-input.correct {
+      background-color: rgba(46,204,113,0.15) !important; /* 배경색 투명도 증가 */
+      border-color: rgba(46,204,113,0.6) !important; /* 테두리 투명도 증가 */
+      box-shadow: 0 0 20px rgba(46,204,113,0.4) !important; /* 그림자 투명도 증가 */
+      animation: correctGlow 1.5s infinite alternate !important;
+    }
+
+    .answer-input.incorrect {
+      background-color: rgba(231,76,60,0.15) !important; /* 배경색 투명도 증가 */
+      border-color: rgba(231,76,60,0.6) !important; /* 테두리 투명도 증가 */
+      box-shadow: 0 0 20px rgba(231,76,60,0.4) !important; /* 그림자 투명도 증가 */
+      animation: incorrectGlow 1.5s infinite alternate !important;
+    }
+
+    @keyframes correctGlow {
+      0% { box-shadow: 0 0 10px rgba(46,204,113,0.2); }
+      100% { box-shadow: 0 0 25px rgba(46,204,113,0.4); }
+    }
+
+    @keyframes incorrectGlow {
+      0% { box-shadow: 0 0 10px rgba(231,76,60,0.2); }
+      100% { box-shadow: 0 0 25px rgba(231,76,60,0.4); }
+    }
+
+    /* 진행률 게이지 */
+    .progress-container {
+      width: 100%;
+      height: var(--progress-height);
+      background-color: white;
+      border-radius: var(--progress-border-radius);
+      margin: 30px 0 15px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-image: var(--progress-gradient);
+      transition: width var(--progress-animation-duration) cubic-bezier(0.22,0.61,0.36,1.2);
+      position: relative;
+      box-shadow: var(--box-shadow-light);
+      overflow: hidden;
+      border-radius: 0 var(--progress-border-radius) var(--progress-border-radius) 0;
+    }
+
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--progress-shine), transparent);
+      animation: shine var(--progress-shine-duration) infinite;
+      z-index: 2;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,0.1) 0%,
+          rgba(255,255,255,0.1) 5%,
+          rgba(255,255,255,0.3) 10%,
+          rgba(255,255,255,0.1) 15%,
+          rgba(255,255,255,0.1) 20%
+        );
+      animation: wave 8s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0) translateX(-25%); }
+      100% { transform: rotate(360deg) translateX(-25%); }
+    }
+
+    .progress-indicator {
+      display: none;  /* 완전히 숨기기 */
+      position: absolute;
+      right: 10px;
+      top: -25px;
+      background-color: white;
+      color: var(--secondary-color);
+      font-size: 0.8rem;
+      padding: 3px 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+      opacity: 0.9;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+
+    /* 완료 애니메이션 */
+    @keyframes explode {
+      0% { transform: scale(1); filter: brightness(1); }
+      20% { transform: scale(1.05); filter: brightness(1.3); }
+      40% { transform: scale(1); filter: brightness(1); }
+      60% { transform: scale(1.08); filter: brightness(1.4); }
+      80% { transform: scale(1); filter: brightness(1.2); }
+      100% { transform: scale(1.03); filter: brightness(1.5); }
+    }
+
+    .completed-animation {
+      animation: explode var(--complete-animation-duration) ease-out forwards;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: particle-animation var(--particle-animation-duration) cubic-bezier(0,0.5,0.5,1) forwards;
+    }
+    @keyframes particle-animation {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--translateX), var(--translateY));
+      }
+    }
+
+    /* ======================= 결과 화면 색상 ----- */
+    #resultSection {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--body-bg-start-color) 0%, var(--body-bg-end-color) 100%);
+      border-radius: var(--border-radius-x-large);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 700px;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn var(--result-animation-duration) ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #resultSection::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      right: -50px;
+      bottom: -50px;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2393c5fd' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: var(--body-pattern-opacity);
+      z-index: -2;
+    }
+    .result-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+    .result-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--title-line-width);
+      height: var(--title-line-height);
+      background: linear-gradient(90deg, var(--title-line-start-color), var(--title-line-end-color));
+      border-radius: var(--title-line-radius);
+    }
+    .result-info {
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: var(--result-info-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+    #finalTime {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    #finalScore {
+      font-size: var(--x-large-font-size);
+      font-weight: bold;
+      margin: 25px auto;
+      padding: 20px;
+      background: var(--result-score-bg);
+      color: white;
+      border-radius: var(--border-radius-x-large);
+      box-shadow: var(--box-shadow-heavy);
+      max-width: 400px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      animation: pulsate var(--score-pulsate-duration) infinite alternate;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    #finalScore::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+      transform: skewX(-25deg);
+      animation: shine-score var(--score-shine-duration) infinite;
+    }
+    @keyframes shine-score {
+      0% { left: -100%; }
+      45%, 100% { left: 100%; }
+    }
+    @keyframes pulsate {
+      0% { transform: scale(1); box-shadow: var(--box-shadow-heavy); }
+      100% { transform: scale(1.05); box-shadow: 0 12px 25px rgba(76,175,80,0.3); }
+    }
+    #finalScore:hover { transform: translateY(-5px); }
+
+    /* 서버 응답 메시지 스타일 */
+    .server-message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      animation: fadeIn var(--result-animation-duration) ease-in-out;
+    }
+    .server-message.success {
+      color: var(--correct-color);
+    }
+    .server-message.error {
+      color: var(--incorrect-color);
+    }
+
+    /* ======================= 로딩 스피너 ======================= */
+    .loading-spinner {
+      display: none; /* Initially hidden */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--next-button-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ======================= 반응형 디자인 ======================= */
+    @media (max-width: var(--mobile-breakpoint)) {
+      .container { padding: 10px; width: 100%; border-radius: 8px; }
+      #gameTitle { font-size: 24px; }
+      .info-panel { padding: 8px 3px; margin-bottom: 15px; }
+      .info-label { font-size: 0.7rem; margin-bottom: 3px; }
+      .info-value { font-size: 1rem; }
+      .btn, .option { padding: 10px 15px; font-size: 0.9rem; margin: 8px 3px; }
+      .input-field { width: calc(100% - 30px); margin-right: 0; margin-bottom: 10px; } /* Adjusted for mobile */
+      .answer-input { width: 100%; } /* Ensure full width on mobile */
+      #startSection { padding: 20px 10px; }
+      #startSection > div { display: flex; flex-direction: column; align-items: center; } /* Stack input and button */
+      .question-container { flex-direction: column; } /* Stack passage and question on mobile */
+      .passage { border-right: none; border-bottom: 1px solid #eee; padding-right: 0; margin-bottom: 10px; max-height: 300px; }
+      .question.with-passage { margin-left: 0; }
+      /* 주관식 입력 필드를 감싸는 div의 너비를 모바일에서 조정합니다. */
+      .input-answer-fields > div[style*="width: 350px"] { /* 350px 너비가 적용된 div 선택 */
+          width: 90% !important; /* 모바일에서는 90% 너비로 강제 적용 */
+          max-width: 350px; /* 최대 너비는 유지 */
+      }
+    }
+
+    /* ======================= 태블릿 최적화 스타일 ======================= */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .container {
+        width: 90%;
+        padding: var(--tablet-padding);
+      }
+
+      .question-container {
+        padding: var(--tablet-padding);
+      }
+
+      .option {
+        font-size: var(--tablet-option-font-size);
+        min-height: var(--tablet-touch-target);
+        padding: 15px 25px;
+      }
+
+      .btn {
+        font-size: calc(var(--button-font-size) * 1.2);
+        padding: 16px 28px;
+        min-height: var(--tablet-touch-target);
+      }
+
+      .input-answer-fields > div {
+        width: 80% !important;
+        max-width: 500px;
+      }
+
+      .answer-input {
+        font-size: calc(var(--input-font-size) * 1.2);
+        padding: 15px 20px;
+      }
+
+      #gameTitle {
+        font-size: calc(var(--game-title-font-size) * 1.2);
+        padding: 20px 40px;
+      }
+    }
+
+    /* ======================= 게임 효과 스타일 ======================= */
+    .question-image {
+      box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .question-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255,105,180,0.5);
+    }
+
+    .option {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: rotate(45deg);
+      animation: optionShine 3s infinite;
+    }
+
+    @keyframes optionShine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+    .btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: rotate(45deg);
+      animation: buttonShine 2s infinite;
+    }
+
+    @keyframes buttonShine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+    .progress-bar {
+      background: linear-gradient(90deg, var(--primary-pink-light), var(--primary-pink));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: progressShine 2s infinite;
+    }
+
+    @keyframes progressShine {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(200%); }
+    }
+
+    /* 정답/오답 효과 강화 */
+    .option.correct {
+      animation: correctPulse 1s;
+    }
+
+    .option.incorrect {
+      animation: incorrectPulse 1s;
+    }
+
+    @keyframes correctPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes incorrectPulse {
+      0% { transform: scale(1); }
+      25% { transform: scale(0.95); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    /* 터치 피드백 최적화 */
+    @media (hover: none) {
+      .option:active,
+      .btn:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+      }
+    }
+
+    /* 배경 텍스트 애니메이션 */
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.08; }
+      50% { opacity: 0.12; }
+    }
+
+    /* 배경 텍스트 스타일 */
+    .love-text {
+      position: fixed;
+      font-family: var(--title-font);
+      pointer-events: none;
+      z-index: -1;
+      animation: fadeInOut 4s infinite;
+      white-space: nowrap;
+    }
+
+    /* 텍스트와 하트 색상 분리 */
+    .love-text span {
+      color: var(--primary-color);
+    }
+
+    .love-text .heart {
+      color: #FF0040;
+      font-size: 1.2em;
+      display: inline-block;
+      animation: heartBeat 2s infinite;
+    }
+
+    /* 하트 애니메이션 */
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* 각 텍스트 위치 및 스타일 */
+    .love-text:nth-child(1) {
+      top: 15%;
+      left: 10%;
+      font-size: 2.5em;
+      transform: rotate(-15deg);
+    }
+
+    .love-text:nth-child(2) {
+      top: 35%;
+      right: 12%;
+      font-size: 2em;
+      transform: rotate(10deg);
+    }
+
+    .love-text:nth-child(3) {
+      bottom: 20%;
+      left: 15%;
+      font-size: 2.2em;
+      transform: rotate(5deg);
+    }
+
+    .love-text:nth-child(4) {
+      bottom: 30%;
+      right: 15%;
+      font-size: 1.8em;
+      transform: rotate(-8deg);
+    }
+
+    .info-label {
+      font-weight: 500;
+      margin-bottom: 2px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 24px; /* 라벨 텍스트 크기 증가 */
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    /* 문제 번호 스타일 */
+    .question-number {
+      font-size: 32px;
+      line-height: 1;
+      padding: 8px 20px;
+      background-color: white;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* 모든 버튼의 기본 포커스 스타일 제거 */
+    button, .btn, .option {
+      -webkit-tap-highlight-color: transparent; /* 모바일/태블릿에서 탭 시 하이라이트 제거 */
+      outline: none; /* 포커스 아웃라인 제거 */
+    }
+
+    button:focus, .btn:focus, .option:focus {
+      outline: none;
+    }
+
+    /* 터치 디바이스에서 탭 시 파란색 배경 제거 */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 버튼 포커스 스타일 제거 */
+    button, .btn, .option {
+      -webkit-tap-highlight-color: transparent !important;
+      outline: none !important;
+    }
+
+    button:focus, .btn:focus, .option:focus {
+      outline: none !important;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="love-text"><span>서율아 사랑해</span> <span class="heart">❤️</span></div>
+  <div class="love-text"><span>서율아 사랑해</span> <span class="heart">❤️</span></div>
+  <div class="love-text"><span>서율아 사랑해</span> <span class="heart">❤️</span></div>
+  <div class="love-text"><span>서율아 사랑해</span> <span class="heart">❤️</span></div>
+  <div class="banner" id="banner"></div>
+  <h1 id="gameTitle"></h1>
+  <div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+  </div>
+  <div class="container">
+    <div id="startSection">
+      <h2 class="start-title">서율아 게임을 시작해볼까?</h2>
+      <div>
+        <button class="btn" id="startButton">게임시작</button>
+      </div>
+    </div>
+    <div id="gameSection">
+      <div class="info-panel">
+        <div class="info-item">
+          <div class="info-label">경과시간</div>
+          <div class="info-value" id="timer">00:00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">현재 점수</div>
+          <div class="info-value" id="currentScore">0</div>
+        </div>
+      </div>
+      <div class="question-container" id="questionContainer">
+        <div class="joy-decoration">JOY</div>
+        <div class="joy-decoration">JOY</div>
+        <div class="joy-decoration">JOY</div>
+        <div class="joy-decoration">JOY</div>
+        <div class="joy-decoration">JOY</div>
+        <div class="joy-decoration">JOY</div>
+        <div class="passage" id="passage"></div>
+        <div class="question" id="question">
+          <div class="question-number" id="questionNumber">문제 1</div>
+          <div class="question-images" id="questionImages"></div>
+          <div class="options" id="multipleChoice"></div>
+          <div class="input-answer" id="shortAnswer"></div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-indicator" id="progressIndicator"></div>
+          </div>
+          <button class="btn" id="nextButton" disabled>다음문제</button>
+        </div>
+      </div>
+    </div>
+    <div id="resultSection">
+      <div class="result-title">게임 종료</div>
+      <div class="result-info" id="finalScore"></div>
+      <div class="result-info" id="finalTime"></div>
+      <button class="btn" id="submitButton">전송하기</button>
+      <div id="serverMessage" class="server-message"></div>
+    </div>
+  </div>
+  <script>
+  /* 텍스트 설정 */
+  const START_SCREEN_TITLE = "이름을 입력하고 게임을 시작하세요";
+  const PLAYER_NAME_PLACEHOLDER = "이름을 입력하세요";           /* 이름 입력 필드 플레이스홀더 */
+  const START_BUTTON_TEXT = "게임시작";                  /* 시작 버튼 텍스트 */
+  const NEXT_BUTTON_TEXT = "다음문제";                   /* 다음 버튼 텍스트 */
+  const COMPLETE_BUTTON_TEXT = "완료";                   /* 완료 버튼 텍스트 */
+  const CHECK_BUTTON_TEXT = "확인";                    /* 확인 버튼 텍스트 */
+  const SUBMIT_BUTTON_TEXT = "전송하기";                 /* 전송 버튼 텍스트 */
+  const RESULT_TITLE_TEXT = "게임 종료";                   /* 결과 화면 제목 */
+
+  const SUCCESS_MESSAGE = "전송 완료";  /* 성공 메시지 */
+  const ERROR_MESSAGE = "전송 실패";      /* 오류 메시지 */
+  const NETWORK_ERROR = "네트워크 오류";   /* 네트워크 오류 메시지 */
+
+  /* 게임 설정 */
+  const gameTitle = gameConfig.gameTitle;      /* 게임 제목 */
+  const questions = gameConfig.questions;      /* 모든 문제 배열 */
+  const defaultScore = gameConfig.defaultScore || 10; /* 기본 점수 */
+  const bannerURL = gameConfig.bannerURL || "";      /* 배너 이미지 URL */
+  const randomizeQuestions = gameConfig.randomizeQuestions || false; /* 문제 순서 랜덤화 여부 */
+
+  /* 배너 초기화 - 즉시 실행 */
+  if (gameConfig.bannerURL) {
+    const banner = document.getElementById('banner');
+    banner.innerHTML = `<img src="${gameConfig.bannerURL}" alt="배너">`;
+    banner.style.display = "block";
+  }
+
+  /* 전역 변수 선언 */
+  let currentQuestion = 0;      /* 현재 문제 인덱스 */
+  let score = 0;                /* 현재 점수 */
+  let elapsedTime = 0;          /* 경과 시간(초) */
+  let timerInterval = null;     /* 타이머 인터벌 ID */
+  let startTime = 0;            /* 시작 시간 타임스탬프 */
+  let gameOver = false;         /* 게임 종료 여부 */
+  let userAnswers = [];         /* 사용자 답변 기록 */
+  let answerSubmitted = false;  /* 현재 문제 답변 제출 여부 */
+  let completedQuestions = 0;   /* 완료된 문제 수 */
+  let selectedOptions = [];     /* 선택된 객관식 옵션들(복수선택) */
+  let player = "";              /* 플레이어 이름 */
+
+  /* DOM 요소 참조 (최상단에 선언하여 이후 코드에서 안전하게 사용) */
+  const elements = {
+    banner: document.getElementById("banner"),
+    gameTitle: document.getElementById("gameTitle"),
+    startSection: document.getElementById('startSection'),
+    gameSection: document.getElementById('gameSection'),
+    resultSection: document.getElementById('resultSection'),
+    playerName: document.getElementById('playerName'),
+    startButton: document.getElementById('startButton'),
+    timer: document.getElementById('timer'),
+    currentScore: document.getElementById('currentScore'),
+    questionContainer: document.getElementById('questionContainer'),
+    passage: document.getElementById('passage'),
+    question: document.getElementById('question'),
+    questionNumber: document.getElementById('questionNumber'),
+    questionImages: document.getElementById('questionImages'),
+    multipleChoice: document.getElementById('multipleChoice'),
+    shortAnswer: document.getElementById('shortAnswer'),
+    nextButton: document.getElementById('nextButton'),
+    submitButton: document.getElementById('submitButton'),
+    finalScore: document.getElementById('finalScore'),
+    finalTime: document.getElementById('finalTime'),
+    serverMessage: document.getElementById('serverMessage'),
+    progressBar: document.getElementById('progressBar'),
+    progressIndicator: document.getElementById('progressIndicator'),
+    loadingSpinner: document.getElementById('loadingSpinner'),
+    // --- 수정 3: 진행률 컨테이너 요소 추가 ---
+    progressContainer: document.querySelector('.progress-container') // progressBar의 부모 요소를 선택
+    // --- 수정 끝 ---
+  };
+
+  /* 타이머 함수 */
+  const timerFunctions = {
+    start() {
+      startTime = Date.now();              /* 현재 시간을 시작 시간으로 설정 */
+      timerInterval = setInterval(this.update, 1000); /* 1초마다 update 함수 실행 */
+    },
+    update() {
+      elapsedTime = Math.floor((Date.now() - startTime) / 1000); /* 경과 시간 계산 */
+      const m = Math.floor(elapsedTime / 60).toString().padStart(2, '0'); /* 분 */
+      const s = (elapsedTime % 60).toString().padStart(2, '0');      /* 초 */
+      elements.timer.textContent = `${m}:${s}`;                       /* 타이머 표시 */
+    },
+    stop() { clearInterval(timerInterval); },                       /* 타이머 정지 */
+    formatTime(sec) {
+      const m = Math.floor(sec / 60);                          /* 분 */
+      const s = sec % 60;                                      /* 초 */
+      return `${m}분 ${s}초`;                                  /* 포맷 변환 */
+    }
+  };
+
+  /* 게임 초기화 함수 */
+  function resetGame() {
+    if(randomizeQuestions) { questions.sort(() => Math.random() - 0.5); } /* 문제 랜덤 섞기 */
+
+    /* 변수 초기화 */
+    currentQuestion = 0;
+    score = 0;
+    elapsedTime = 0;
+    gameOver = false;
+    userAnswers = [];
+    answerSubmitted = false;
+    completedQuestions = 0;
+    selectedOptions = [];
+
+    /* UI 초기화 */
+    elements.timer.textContent = "00:00";
+    elements.currentScore.textContent = "0";
+    updateProgressBar();
+  }
+
+  // 진행률 게이지 업데이트 함수
+  function updateProgressBar() {
+    const progress = (completedQuestions / questions.length) * 100;      /* 진행률 계산 */
+    elements.progressBar.style.width = `${progress}%`;                   /* 진행 바 너비 설정 */
+    elements.progressIndicator.textContent = `${completedQuestions}/${questions.length}`; /* 진행 상태 표시 */
+  }
+
+  // 파티클 효과 생성
+  function createCompletionParticles() {
+    const container = document.querySelector('.progress-container');
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const particleCount = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-count'));
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+
+      const colors = [
+        getComputedStyle(document.documentElement).getPropertyValue('--particle-color-1').trim(),
+        getComputedStyle(document.documentElement).getPropertyValue('--particle-color-2').trim(),
+        getComputedStyle(document.documentElement).getPropertyValue('--particle-color-3').trim(),
+        getComputedStyle(document.documentElement).getPropertyValue('--particle-color-4').trim(),
+        getComputedStyle(document.documentElement).getPropertyValue('--particle-color-5').trim()
+      ];
+      particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+      const minSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-size-min'));
+      const maxSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-size-max'));
+      const size = Math.random() * (maxSize - minSize) + minSize;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      const angle = Math.random() * Math.PI * 2;
+      const minDistance = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-distance-min'));
+      const maxDistance = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-distance-max'));
+      const distance = Math.random() * (maxDistance - minDistance) + minDistance;
+      const translateX = Math.cos(angle) * distance;
+      const translateY = Math.sin(angle) * distance;
+
+      particle.style.setProperty('--translateX', `${translateX}px`);
+      particle.style.setProperty('--translateY', `${translateY}px`);
+      particle.style.left = `${centerX - rect.left}px`;
+      particle.style.top = `${centerY - rect.top}px`;
+      particle.style.animationDelay = `${Math.random() * 0.3}s`;
+
+      container.appendChild(particle);
+
+      const animationDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--particle-animation-duration')) * 1000 + 500;
+      setTimeout(() => { particle.remove(); }, animationDuration);
+    }
+  }
+
+  // 완료 애니메이션 실행
+  function triggerCompletionAnimation() {
+    return new Promise(resolve => {
+      elements.progressBar.style.width = "100%";
+      
+      setTimeout(() => {
+        elements.progressBar.classList.add('completed-animation');
+        createCompletionParticles();
+        
+        const animationDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--complete-animation-duration')) * 1000 + 300;
+        setTimeout(() => { resolve(); }, animationDuration);
+      }, 300);
+    });
+  }
+
+  // 남은 기회 업데이트
+  function updateChancesDisplay() {
+    elements.chance1.className = remainingChances >= 1 ? 'chance-indicator' : 'chance-indicator lost';
+    elements.chance2.className = remainingChances >= 2 ? 'chance-indicator' : 'chance-indicator lost';
+    elements.chance3.className = remainingChances >= 3 ? 'chance-indicator' : 'chance-indicator lost';
+  }
+
+  // 문제 로드 함수
+  function loadQuestion(qIndex) {
+    answerSubmitted = false;                                           /* 답변 제출 상태 초기화 */
+    selectedOptions = [];                                              /* 선택된 옵션 초기화 */
+    elements.nextButton.disabled = true;                               /* 다음문제 버튼 비활성화 */
+
+    /* 기존 확인 버튼 제거 */
+    const existingConfirm = document.getElementById('checkButton');
+    if(existingConfirm && existingConfirm.parentNode) { existingConfirm.parentNode.removeChild(existingConfirm); }
+
+    /* 객관식/주관식 영역 초기화 */
+    elements.multipleChoice.innerHTML = "";
+    elements.multipleChoice.style.display = "none"; // Hide by default
+    elements.shortAnswer.innerHTML = "";
+    elements.shortAnswer.style.display = "none"; // Hide by default
+
+    const q = questions[qIndex];                                       /* 현재 문제 가져오기 */
+    if(!q) { endGame(true); return; }                                  /* 문제가 없으면 게임 종료 */
+
+    elements.questionNumber.textContent = `문제 ${qIndex + 1}`;        /* 문제 번호 표시 */
+
+    /* 보기(passage) 설정 */
+    if(q.passage) {
+      elements.passage.style.display = 'block';
+      elements.passage.innerHTML = `<img src="${q.passage}" alt="보기" style="width:100%;">`;
+      elements.question.classList.add('with-passage');
+    } else {
+      elements.passage.style.display = 'none';
+      elements.question.classList.remove('with-passage');
+    }
+
+    /* 문제 이미지 설정 */
+    elements.questionImages.innerHTML = "";
+    const imgContainer = document.createElement('div');
+    imgContainer.className = "image-container";
+
+    q.images.forEach((imgUrl, idx) => {
+      const img = document.createElement('img');
+      img.src = imgUrl;
+      img.alt = `문제 ${qIndex + 1} 이미지 ${idx + 1}`;
+      img.className = "question-image";
+      img.onload = function() {
+        // Adjust margin if needed, especially for stacked images
+      };
+      imgContainer.appendChild(img);
+    });
+    elements.questionImages.appendChild(imgContainer);
+
+    if(q.type === "객관식") {
+      elements.multipleChoice.style.display = "flex"; // Show multiple choice area
+
+      // 옵션 설정
+      let options = [];
+      if(q.customOptions && Array.isArray(q.customOptions) && q.customOptions.length > 0) {
+        options = q.customOptions.slice(0, 5); // 최대 5개 커스텀 옵션
+      } else {
+        // customOptions가 없을 경우 기본 옵션 (예시용, 실제로는 customOptions 필수일 수 있음)
+        options = ["1", "2", "3", "4", "5"];
+      }
+
+      // Determine layout (vertical or horizontal) - simplified
+      elements.multipleChoice.classList.remove('vertical'); // Default to horizontal
+
+      /* === 객관식 옵션 생성 === */
+      options.forEach((optText, index) => {
+        const optDiv = document.createElement('div');
+        optDiv.className = "option";
+        optDiv.setAttribute("data-option", (index + 1).toString());
+        optDiv.textContent = optText;
+        optDiv.addEventListener('click', handleOptionClick);
+        elements.multipleChoice.appendChild(optDiv);
+      });
+
+      /* 복수정답 여부에 따라 확인 버튼 생성 */
+      if (q.answer.length > 1 || q.type === "주관식") {
+        createConfirmButton(handleMultipleChoiceCheck);
+      }
+    } else if(q.type === "주관식") {
+      elements.shortAnswer.style.display = "flex"; // Show short answer area
+      let inputHTML = '<div class="input-answer-fields">';
+
+      // --- 수정 1: 너비 고정 로직 ---
+      const fixedWidth = "350px"; // 고정 너비 설정
+
+      if(Array.isArray(q.answer)) {
+          /* 복수 입력 필드 생성 로직 */
+          for(let i = 0; i < Math.min(q.answer.length, 5); i++) {
+              const placeholder = (q.placeholders && Array.isArray(q.placeholders) && q.placeholders[i])
+                                  ? q.placeholders[i]
+                                  : `답변 ${i+1}`; // Default for multiple
+              // 너비 고정 및 중앙 정렬 위해 margin: 5px auto 추가
+              inputHTML += `<div style="width: ${fixedWidth}; margin: 5px auto;">
+                              <div style="text-align: left; margin-bottom: 3px; font-size: 0.9rem; color: #666;">답변 ${i+1}</div>
+                              <input class="answer-input" id="answerInput${i+1}" placeholder="${placeholder}" type="text"/>
+                            </div>`;
+          }
+      } else {
+          /* 단일 입력 필드 생성 로직 */
+          let singlePlaceholder = "답을 입력하세요"; // 기본 플레이스홀더
+          if (q.placeholders) {
+              if (typeof q.placeholders === 'string') {
+                  singlePlaceholder = q.placeholders;
+              } else if (Array.isArray(q.placeholders) && q.placeholders.length > 0 && q.placeholders[0]) {
+                  singlePlaceholder = q.placeholders[0];
+              }
+          }
+          // 너비 고정 및 중앙 정렬 위해 margin: 5px auto 추가
+          inputHTML += `<div style="width: ${fixedWidth}; margin: 5px auto;">
+                           <input class="answer-input" id="answerInput" placeholder="${singlePlaceholder}" type="text"/>
+                         </div>`;
+      }
+      // --- 수정 끝 ---
+
+      inputHTML += '</div>';
+      elements.shortAnswer.innerHTML = inputHTML;
+
+      /* 입력 필드에 이벤트 리스너 추가 */
+      document.querySelectorAll('.answer-input').forEach(input => {
+        input.addEventListener('input', handleShortAnswerInput);
+        input.addEventListener('keyup', (e) => {
+          // Allow Enter key submission if checkButton exists and is enabled
+          const checkBtn = document.getElementById('checkButton');
+          if(e.key === 'Enter' && checkBtn && !checkBtn.disabled) {
+            checkBtn.click();
+          }
+        });
+      });
+
+      createConfirmButton(handleCheckButtonClick); // Create check button for short answers
+    }
+
+    /* 마지막 문제인 경우 완료 버튼으로 변경 */
+    if(qIndex === questions.length - 1) {
+      elements.nextButton.textContent = COMPLETE_BUTTON_TEXT;
+      elements.nextButton.classList.add('complete-button');
+    } else {
+      elements.nextButton.textContent = NEXT_BUTTON_TEXT;
+      elements.nextButton.classList.remove('complete-button');
+    }
+  }
+
+  /* 확인 버튼 생성 함수 */
+  function createConfirmButton(callback) {
+    const existing = document.getElementById('checkButton');
+    if(existing && existing.parentNode) { existing.parentNode.removeChild(existing); }
+
+    const btn = document.createElement('button');
+    btn.className = "btn";
+    btn.id = "checkButton";
+    btn.textContent = CHECK_BUTTON_TEXT;
+    btn.disabled = true; // Initially disabled
+    btn.addEventListener('click', callback);
+
+    // --- 수정 3: 확인 버튼 위치 변경 ---
+    // Insert the button before the progress bar container
+    // elements.progressContainer는 DOM 요소 참조 객체에 이미 정의되어 있음
+    elements.progressContainer.parentNode.insertBefore(btn, elements.progressContainer);
+    // --- 수정 끝 ---
+  }
+
+  /* 객관식 옵션 클릭 처리 */
+  function handleOptionClick(e) {
+    if(gameOver || answerSubmitted) return;
+
+    const selectedOption = e.currentTarget;
+    const q = questions[currentQuestion];
+    const userAnswer = selectedOption.getAttribute('data-option'); // 선택한 옵션의 번호 (1, 2, 3...)
+
+    if(Array.isArray(q.answer) && q.answer.length > 1) {
+      /* 복수 선택 로직 - 기존과 동일하게 유지 */
+      if(selectedOptions.includes(userAnswer)) {
+        selectedOptions = selectedOptions.filter(opt => opt !== userAnswer);
+        selectedOption.classList.remove("selected");
+      } else {
+        selectedOptions.push(userAnswer);
+        selectedOption.classList.add("selected");
+      }
+
+      /* 하나 이상 선택되었을 때 확인 버튼 활성화 */
+      const confirmBtn = document.getElementById('checkButton');
+      if(confirmBtn) { confirmBtn.disabled = (selectedOptions.length === 0); }
+    } else {
+      /* 단일 선택 로직 - 휘매쓰 학습용 방식으로 수정 */
+      answerSubmitted = true;
+      
+      // 답안 비교 로직 수정
+      const isCorrect = userAnswer === String(q.answer);
+
+      if(isCorrect) {
+        /* 정답인 경우 */
+        selectedOption.classList.add("correct");
+        score += q.score || defaultScore;
+        elements.currentScore.textContent = score;
+      } else {
+        /* 오답인 경우 */
+        selectedOption.classList.add("incorrect");
+      }
+
+      /* 사용자 답변 기록 */
+      userAnswers.push({
+        questionId: q.id,
+        userAnswer: userAnswer,
+        correctAnswer: q.answer,
+        isCorrect: isCorrect,
+        score: isCorrect ? (q.score || defaultScore) : 0
+      });
+
+      elements.nextButton.disabled = false;
+      document.querySelectorAll('.option').forEach(opt => {
+        opt.style.pointerEvents = 'none';
+      });
+    }
+  }
+
+  /* 복수 객관식 확인 버튼 처리 */
+  function handleMultipleChoiceCheck() {
+    if(gameOver || answerSubmitted) return;
+
+    const q = questions[currentQuestion];
+    answerSubmitted = true;
+
+    /* 정답 확인 */
+    let allCorrect = true;
+    // q.answer가 항상 배열이라고 가정 (복수 선택 문제이므로)
+    const correctAnswers = q.answer.map(String); // Ensure correct answers are strings
+    const userAnswersStr = selectedOptions.map(String); // Ensure user answers are strings
+
+    /* 선택한 개수와 정답 개수가 다르면 오답 */
+    if(userAnswersStr.length !== correctAnswers.length) {
+        allCorrect = false;
+    } else {
+      // Check if every selected answer is in the correct answers array and vice-versa
+      allCorrect = userAnswersStr.every(ans => correctAnswers.includes(ans)) &&
+                   correctAnswers.every(ans => userAnswersStr.includes(ans)); // Ensure both ways match
+    }
+
+    /* 옵션별 정답/오답 표시 */
+    document.querySelectorAll('.option').forEach(opt => {
+      const optVal = opt.getAttribute('data-option');
+      const isSelected = userAnswersStr.includes(optVal);
+      const isCorrectAnswer = correctAnswers.includes(optVal);
+
+      if(isSelected) { // 사용자가 선택한 옵션에 대해서만 피드백
+        if(isCorrectAnswer) {
+          opt.classList.add("correct"); // 선택했고 정답이면 초록색
+        } else {
+          opt.classList.add("incorrect"); // 선택했고 오답이면 빨간색
+        }
+      }
+
+      opt.style.pointerEvents = 'none'; // Disable further clicks
+    });
+
+    if(allCorrect) {
+      /* 모두 정답인 경우 */
+      score += q.score || defaultScore;
+      elements.currentScore.textContent = score;
+    }
+
+    /* 확인 버튼 비활성화, 다음 버튼 활성화 */
+    const checkBtn = document.getElementById('checkButton');
+    if(checkBtn) checkBtn.disabled = true;
+    elements.nextButton.disabled = false;
+
+    /* 사용자 답변 기록 */
+    userAnswers.push({
+      questionId: q.id,
+      userAnswer: selectedOptions, // Keep original format (array of strings)
+      correctAnswer: q.answer,
+      isCorrect: allCorrect,
+      score: allCorrect ? (q.score || defaultScore) : 0
+    });
+  }
+
+  /* 주관식 입력 처리 (확인 버튼 활성화/비활성화) */
+  function handleShortAnswerInput() {
+    if(gameOver || answerSubmitted) return;
+
+    /* 모든 입력 필드가 채워졌는지 확인 */
+    const inputs = document.querySelectorAll('.answer-input');
+    let allFilled = true;
+
+    inputs.forEach(input => {
+      if(input.value.trim() === "") { allFilled = false; }
+    });
+
+    /* 확인 버튼 활성화/비활성화 */
+    const confirmBtn = document.getElementById('checkButton');
+    if(confirmBtn) { confirmBtn.disabled = !allFilled; }
+  }
+
+  /* 주관식 확인 버튼 처리 */
+  function handleCheckButtonClick() {
+    if(gameOver || answerSubmitted) return;
+
+    const q = questions[currentQuestion];
+    const inputs = document.querySelectorAll('.answer-input');
+    answerSubmitted = true;
+
+    let isCorrectOverall = true;
+    let userAnswerArray = [];
+
+    /* 각 입력 필드별 정답 확인 - 휘매쓰 학습용 방식으로 수정 */
+    inputs.forEach((input, index) => {
+        const userAns = input.value.trim();
+        userAnswerArray.push(userAns);
+
+        const correctAns = Array.isArray(q.answer) ? String(q.answer[index]) : String(q.answer);
+        
+        if(userAns !== correctAns) {
+            isCorrectOverall = false;
+            input.classList.add('incorrect');
+        } else {
+            input.classList.add('correct');
+        }
+        input.readOnly = true;  // 입력 필드 비활성화
+    });
+
+    if(isCorrectOverall) {
+        /* 정답인 경우 */
+        score += q.score || defaultScore;
+        elements.currentScore.textContent = score;
+    }
+
+    /* 다음 버튼 활성화, 확인 버튼 비활성화 */
+    elements.nextButton.disabled = false;
+    const checkButton = document.getElementById('checkButton');
+    if(checkButton) {
+        checkButton.disabled = true;
+        checkButton.style.pointerEvents = 'none';  // 클릭 이벤트도 완전히 차단
+    }
+
+    /* 사용자 답변 기록 */
+    userAnswers.push({
+        questionId: q.id,
+        userAnswer: userAnswerArray,
+        correctAnswer: q.answer,
+        isCorrect: isCorrectOverall,
+        score: isCorrectOverall ? (q.score || defaultScore) : 0
+    });
+  }
+
+  /* 다음 문제 버튼 이벤트 */
+  elements.nextButton.addEventListener('click', () => {
+    if (elements.nextButton.disabled) return;
+
+    completedQuestions++;
+    updateProgressBar();
+
+    if (currentQuestion >= questions.length - 1) {
+      elements.progressBar.style.width = "100%";
+      setTimeout(() => {
+        elements.progressBar.classList.add('completed-animation');
+        createCompletionParticles();
+        setTimeout(() => {
+          endGame(true);
+        }, 1500);
+      }, 100);
+    } else {
+      currentQuestion++;
+      loadQuestion(currentQuestion);
+    }
+  });
+
+  /* 시작 버튼 이벤트 */
+  elements.startButton.addEventListener('click', () => {
+    player = "박서율";  // 플레이어 이름을 '박서율'로 고정
+    elements.startSection.style.display = "none";
+    elements.gameSection.style.display = "block";
+    timerFunctions.start();       /* 타이머 시작 */
+    resetGame();                /* 게임 초기화 */
+    loadQuestion(currentQuestion);  /* 첫 문제 로드 */
+  });
+
+  /* 서버 데이터 전송 함수 */
+  async function sendDataWithRetry(url, data, { timeout = 5000, retries = 3 } = {}) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeout);
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          signal: controller.signal
+        });
+
+        clearTimeout(timer);
+        // Check if response is ok AND content type is JSON before parsing
+        const contentType = response.headers.get("content-type");
+        if (response.ok && contentType && contentType.indexOf("application/json") !== -1) {
+            const responseData = await response.json();
+            return responseData; // Success
+        } else if (response.ok) {
+            // Handle OK response but non-JSON content (if applicable)
+            console.log("Server returned OK but not JSON:", await response.text());
+            return { success: true, message: "Data sent, but response format unclear." }; // Assume success if OK
+        }
+        else {
+          // Handle non-OK responses
+          console.error(`Server error: ${response.status} ${response.statusText}`);
+          throw new Error(`${ERROR_MESSAGE} (Status: ${response.status})`);
+        }
+      } catch (error) {
+        clearTimeout(timer);
+        console.error(`Attempt ${attempt} failed:`, error);
+
+        if (attempt === retries) {
+          if (error.name === 'AbortError') {
+              throw new Error(NETWORK_ERROR + " (Timeout)");
+          }
+           throw error; // Throw the last error
+        }
+        // Wait before retrying (exponential backoff)
+        await new Promise(res => setTimeout(res, 1000 * Math.pow(2, attempt - 1)));
+      }
+    }
+  }
+
+  /* 전송 버튼 이벤트 */
+  elements.submitButton.addEventListener('click', async () => {
+    const game = gameConfig.gameTitle;
+    // const name = elements.playerName.value.trim(); // Name is already in 'player' variable
+    const finalScoreValue = score; // Use the 'score' variable
+    const finalElapsedTimeValue = elapsedTime; // Use the 'elapsedTime' variable
+
+     if (!player) {
+         alert("플레이어 이름 정보가 없습니다. 게임을 다시 시작해주세요.");
+         return;
+     }
+
+    elements.loadingSpinner.style.display = "flex"; // Show spinner
+    elements.serverMessage.textContent = ""; // Clear previous message
+    elements.serverMessage.className = "server-message"; // Reset class
+    elements.submitButton.disabled = true; // Disable button during submission
+
+    try {
+      // Ensure data types are correct for the server
+      const dataToSend = {
+        game: game,
+        name: player,
+        score: parseInt(finalScoreValue, 10),
+        maxScore: questions.length * 10, // 만점 정보 추가
+        elapsedTime: parseInt(finalElapsedTimeValue, 10)
+      };
+
+      console.log("Sending data:", dataToSend); // Log data being sent
+
+      const result = await sendDataWithRetry("https://us-central1-record-f420d.cloudfunctions.net/report", dataToSend, { timeout: 8000, retries: 2 }); // Increased timeout
+
+       console.log("Server response:", result); // Log server response
+
+      // 성공 메시지 표시
+      elements.serverMessage.textContent = SUCCESS_MESSAGE;
+      elements.serverMessage.classList.add("success");
+      // Keep button disabled after successful submission
+    } catch (error) {
+      console.error("Submission failed:", error);
+      // 오류 메시지 표시
+      // Use the error message thrown by sendDataWithRetry or a default
+      elements.serverMessage.textContent = error.message || ERROR_MESSAGE;
+      elements.serverMessage.classList.add("error");
+      elements.submitButton.disabled = false; // Re-enable button on failure to allow retry
+    } finally {
+      elements.loadingSpinner.style.display = "none"; // Hide spinner regardless of outcome
+    }
+  });
+
+  /* 게임 종료 함수 */
+  function endGame(completed) {
+    gameOver = true;
+    timerFunctions.stop();
+    elements.gameSection.style.display = "none";
+    elements.resultSection.style.display = "block";
+
+    // 결과 표시 향상
+    const maxScore = questions.reduce((sum, q) => sum + (q.score || defaultScore), 0);
+    elements.finalScore.innerHTML = `최종 점수: <strong style="color: var(--score-highlight-color); font-size: 1.2em;">${score}</strong>점 / ${maxScore}점`; // Highlight score
+    elements.finalTime.textContent = `총 소요 시간: ${timerFunctions.formatTime(elapsedTime)}`;
+
+    // 축하 효과음 재생
+    ButtonSound.playCongratulations();
+
+    // Reset submit button state
+    elements.submitButton.disabled = false;
+    elements.serverMessage.textContent = '';
+    elements.serverMessage.className = 'server-message';
+  }
+
+  // 버튼 효과음 객체
+  const ButtonSound = {
+    context: null,
+    
+    init() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        this.context = new AudioContext();
+      } catch (e) {
+        console.warn('Web Audio API is not supported in this browser');
+      }
+    },
+
+    playStartSound() {
+      if (!this.context) return;
+      
+      // 첫 번째 프레이즈: 띠리리린~
+      const createPhrase = (startTime, baseFreq) => {
+        const notes = [0, 4, 7, 12, 7, 4]; // 음계 간격
+        const timings = [0, 0.05, 0.1, 0.15, 0.2, 0.25]; // 각 음의 시작 시간
+        
+        notes.forEach((note, index) => {
+          const osc = this.context.createOscillator();
+          const gain = this.context.createGain();
+          
+          osc.connect(gain);
+          gain.connect(this.context.destination);
+          
+          // 주파수 계산 (음계에 따라)
+          const freq = baseFreq * Math.pow(2, note / 12);
+          osc.frequency.setValueAtTime(freq, startTime + timings[index]);
+          
+          // 볼륨 설정
+          gain.gain.setValueAtTime(0, startTime + timings[index]);
+          gain.gain.linearRampToValueAtTime(0.3, startTime + timings[index] + 0.02);
+          gain.gain.setValueAtTime(0.3, startTime + timings[index] + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.01, startTime + timings[index] + 0.1);
+          
+          osc.start(startTime + timings[index]);
+          osc.stop(startTime + timings[index] + 0.1);
+        });
+      };
+      
+      // 첫 번째 시퀀스
+      createPhrase(this.context.currentTime, 800);
+      
+      // 두 번째 시퀀스 (더 높은 음으로)
+      createPhrase(this.context.currentTime + 0.3, 1000);
+      
+      // 마지막 화려한 마무리음
+      const finalOsc = this.context.createOscillator();
+      const finalGain = this.context.createGain();
+      finalOsc.connect(finalGain);
+      finalGain.connect(this.context.destination);
+      
+      // 트릴 효과 (빠른 음높이 변화)
+      finalOsc.frequency.setValueAtTime(1200, this.context.currentTime + 0.6);
+      finalOsc.frequency.linearRampToValueAtTime(1800, this.context.currentTime + 0.7);
+      finalOsc.frequency.linearRampToValueAtTime(2000, this.context.currentTime + 0.8);
+      finalOsc.frequency.linearRampToValueAtTime(2400, this.context.currentTime + 0.9);
+      
+      finalGain.gain.setValueAtTime(0.3, this.context.currentTime + 0.6);
+      finalGain.gain.setValueAtTime(0.3, this.context.currentTime + 0.8);
+      finalGain.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.9);
+      
+      finalOsc.start(this.context.currentTime + 0.6);
+      finalOsc.stop(this.context.currentTime + 0.9);
+      
+      // 반짝이는 하모니 효과
+      const harmonyOsc = this.context.createOscillator();
+      const harmonyGain = this.context.createGain();
+      harmonyOsc.connect(harmonyGain);
+      harmonyGain.connect(this.context.destination);
+      
+      harmonyOsc.frequency.setValueAtTime(2400, this.context.currentTime + 0.6);
+      harmonyOsc.frequency.linearRampToValueAtTime(3000, this.context.currentTime + 0.9);
+      
+      harmonyGain.gain.setValueAtTime(0.1, this.context.currentTime + 0.6);
+      harmonyGain.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.9);
+      
+      harmonyOsc.start(this.context.currentTime + 0.6);
+      harmonyOsc.stop(this.context.currentTime + 0.9);
+    },
+
+    playClickSound() {
+      if (!this.context) return;
+      
+      // 첫 번째 음: "띠" 소리
+      const osc1 = this.context.createOscillator();
+      const gain1 = this.context.createGain();
+      osc1.connect(gain1);
+      gain1.connect(this.context.destination);
+      
+      osc1.frequency.setValueAtTime(1200, this.context.currentTime);
+      osc1.frequency.exponentialRampToValueAtTime(800, this.context.currentTime + 0.1);
+      gain1.gain.setValueAtTime(0.3, this.context.currentTime);
+      gain1.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.1);
+      
+      osc1.start(this.context.currentTime);
+      osc1.stop(this.context.currentTime + 0.1);
+      
+      // 두 번째 음: "디링" 소리
+      const osc2 = this.context.createOscillator();
+      const gain2 = this.context.createGain();
+      osc2.connect(gain2);
+      gain2.connect(this.context.destination);
+      
+      osc2.frequency.setValueAtTime(600, this.context.currentTime + 0.1);
+      osc2.frequency.exponentialRampToValueAtTime(1000, this.context.currentTime + 0.2);
+      gain2.gain.setValueAtTime(0.3, this.context.currentTime + 0.1);
+      gain2.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.3);
+      
+      osc2.start(this.context.currentTime + 0.1);
+      osc2.stop(this.context.currentTime + 0.3);
+    },
+
+    playCongratulations() {
+      if (!this.context) return;
+      
+      // 폭죽 발사 및 폭발 사운드 생성 함수
+      const createFireworkSound = (startTime) => {
+        // 발사음 (저음의 웅장한 소리)
+        const launchOsc = this.context.createOscillator();
+        const launchGain = this.context.createGain();
+        launchOsc.connect(launchGain);
+        launchGain.connect(this.context.destination);
+
+        launchOsc.frequency.setValueAtTime(80, startTime); // 더 낮은 주파수로 시작
+        launchOsc.frequency.exponentialRampToValueAtTime(150, startTime + 0.2); // 천천히 상승
+
+        launchGain.gain.setValueAtTime(0.4, startTime);
+        launchGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
+
+        launchOsc.start(startTime);
+        launchOsc.stop(startTime + 0.3);
+
+        // 폭발음 (웅장한 저음 + 반짝이는 고음)
+        const explosionOsc = this.context.createOscillator();
+        const explosionGain = this.context.createGain();
+        explosionOsc.connect(explosionGain);
+        explosionGain.connect(this.context.destination);
+
+        // 저음 폭발음
+        explosionOsc.frequency.setValueAtTime(100, startTime + 0.2);
+        explosionOsc.frequency.exponentialRampToValueAtTime(60, startTime + 0.5);
+
+        explosionGain.gain.setValueAtTime(0.5, startTime + 0.2);
+        explosionGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.5);
+
+        explosionOsc.start(startTime + 0.2);
+        explosionOsc.stop(startTime + 0.5);
+
+        // 반짝이는 효과음 (고음)
+        const sparkleOsc = this.context.createOscillator();
+        const sparkleGain = this.context.createGain();
+        sparkleOsc.connect(sparkleGain);
+        sparkleGain.connect(this.context.destination);
+
+        sparkleOsc.frequency.setValueAtTime(1200, startTime + 0.2);
+        sparkleOsc.frequency.linearRampToValueAtTime(800, startTime + 0.4);
+
+        sparkleGain.gain.setValueAtTime(0.2, startTime + 0.2);
+        sparkleGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.4);
+
+        sparkleOsc.start(startTime + 0.2);
+        sparkleOsc.stop(startTime + 0.4);
+      };
+
+      // 박수 소리 생성 함수
+      const createApplauseSound = (startTime, duration) => {
+        const bufferSize = 4096;
+        const whiteNoise = this.context.createScriptProcessor(bufferSize, 1, 1);
+        const filter = this.context.createBiquadFilter();
+        const gain = this.context.createGain();
+
+        whiteNoise.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.context.destination);
+
+        filter.type = 'bandpass';
+        filter.frequency.value = 800;
+        filter.Q.value = 0.7;
+
+        gain.gain.setValueAtTime(0, startTime);
+        gain.gain.linearRampToValueAtTime(0.3, startTime + 0.1);
+        gain.gain.setValueAtTime(0.3, startTime + duration - 0.1);
+        gain.gain.linearRampToValueAtTime(0, startTime + duration);
+
+        whiteNoise.onaudioprocess = (e) => {
+          const output = e.outputBuffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            output[i] = Math.random() * 2 - 1;
+          }
+        };
+
+        setTimeout(() => {
+          whiteNoise.disconnect();
+          filter.disconnect();
+          gain.disconnect();
+        }, (startTime + duration - this.context.currentTime) * 1000);
+      };
+
+      // 사운드 시퀀스 실행
+      const startTime = this.context.currentTime;
+      
+      // 첫 번째 폭죽
+      createFireworkSound(startTime);
+      
+      // 박수 소리 (폭죽 사이에)
+      createApplauseSound(startTime + 0.3, 0.8);
+      
+      // 두 번째 폭죽
+      createFireworkSound(startTime + 0.8);
+      
+      // 마지막 화려한 폭죽
+      setTimeout(() => {
+        createFireworkSound(this.context.currentTime);
+      }, 1200);
+    },
+
+    playCongratulations() {
+      if (!this.context) return;
+      
+      // 박수 소리 생성 함수
+      const createClap = (startTime, volume = 1) => {
+        // 노이즈 생성 (박수 소리의 기본)
+        const bufferSize = this.context.sampleRate * 0.1;
+        const buffer = this.context.createBuffer(1, bufferSize, this.context.sampleRate);
+        const data = buffer.getChannelData(0);
+        
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        
+        const noise = this.context.createBufferSource();
+        noise.buffer = buffer;
+        
+        // 필터로 박수 소리 만들기
+        const filter = this.context.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 2500;
+        filter.Q.value = 1.7;
+        
+        // 볼륨 조절
+        const gain = this.context.createGain();
+        gain.gain.setValueAtTime(0, startTime);
+        gain.gain.linearRampToValueAtTime(0.6 * volume, startTime + 0.005);
+        gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.1);
+        
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.context.destination);
+        
+        noise.start(startTime);
+        noise.stop(startTime + 0.1);
+      };
+      
+      // 폭죽 터지는 소리 생성 함수
+      const createFirework = (startTime) => {
+        // 발사음
+        const launch = this.context.createOscillator();
+        const launchGain = this.context.createGain();
+        launch.connect(launchGain);
+        launchGain.connect(this.context.destination);
+        
+        launch.frequency.setValueAtTime(1500, startTime);
+        launch.frequency.exponentialRampToValueAtTime(100, startTime + 0.2);
+        launchGain.gain.setValueAtTime(0.1, startTime);
+        launchGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.2);
+        
+        launch.start(startTime);
+        launch.stop(startTime + 0.2);
+        
+        // 폭발음
+        setTimeout(() => {
+          const bufferSize = this.context.sampleRate * 0.5;
+          const buffer = this.context.createBuffer(1, bufferSize, this.context.sampleRate);
+          const data = buffer.getChannelData(0);
+          
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = Math.random() * 2 - 1;
+          }
+          
+          const explosion = this.context.createBufferSource();
+          explosion.buffer = buffer;
+          
+          const explosionFilter = this.context.createBiquadFilter();
+          explosionFilter.type = 'lowpass';
+          explosionFilter.frequency.value = 1000;
+          
+          const explosionGain = this.context.createGain();
+          explosionGain.gain.setValueAtTime(0.5, startTime + 0.2);
+          explosionGain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.5);
+          
+          explosion.connect(explosionFilter);
+          explosionFilter.connect(explosionGain);
+          explosionGain.connect(this.context.destination);
+          
+          explosion.start(startTime + 0.2);
+          explosion.stop(startTime + 0.5);
+        }, 200);
+      };
+      
+      // 폭죽 -> 박수 순서로 재생
+      createFirework(this.context.currentTime);
+      createFirework(this.context.currentTime + 0.3);
+      
+      // 여러 명이 박수치는 효과
+      const clapTimes = [0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.1, 1.2];
+      clapTimes.forEach((time, index) => {
+        createClap(this.context.currentTime + time, 0.7 + Math.random() * 0.3);
+      });
+      
+      // 마지막 폭죽
+      createFirework(this.context.currentTime + 1.4);
+    }
+  };
+
+  // 자동 재생 정책 대응을 위한 이벤트 리스너
+  document.addEventListener('click', (e) => {
+    if (ButtonSound.context && ButtonSound.context.state === 'suspended') {
+      ButtonSound.context.resume();
+    }
+
+    // 시작 버튼인 경우 특별한 사운드 재생
+    if (e.target.id === 'startButton') {
+      ButtonSound.playStartSound();
+      return;
+    }
+
+    // 다른 버튼들
+    if (e.target.matches('button, .btn, .option') && !e.target.disabled) {
+      ButtonSound.playClickSound();
+    }
+  }, true);
+
+  // 초기화
+  ButtonSound.init();
+
+  /* 페이지 로드 시 초기화 */
+  window.onload = () => {
+    document.getElementById("pageTitle").textContent = gameTitle;
+    elements.gameTitle.textContent = gameTitle;
+
+    if (bannerURL) {
+      elements.banner.style.display = "block";
+      elements.banner.innerHTML = `<img src="${bannerURL}" alt="배너">`;
+    }
+
+    updateChancesDisplay();
+  };
+
+  // 게임 완료 시 축하 효과음 재생 추가
+  function showResult() {
+    elements.gameSection.style.display = 'none';
+    elements.resultSection.style.display = 'block';
+    
+    const totalQuestions = questions.length;
+    const correctAnswers = userAnswers.filter(a => a.isCorrect).length;
+    const timeSpent = formatTime(totalSeconds);
+    
+    elements.finalScore.textContent = `최종 점수: ${score}점`;
+    elements.finalTime.textContent = `소요 시간: ${timeSpent}`;
+    
+    // 축하 효과음 재생
+    ButtonSound.playCongratulations();
+    
+    clearInterval(timerInterval);
+  }
+ </script>
+</body>
+</html>
